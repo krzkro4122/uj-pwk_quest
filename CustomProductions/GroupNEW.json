@@ -1,0 +1,32 @@
+[
+  {
+    "Title": "Main_hero grouping with Bandit / Main_hero grupuje się z Bandytą",
+    "TitleGeneric": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
+    "Description": "Stworzenie grupy z dwóch bohaterów: Main_hero przejmuje kontrolę nad inną postacią (Bandit).",
+    "Override": 1,
+    "LSide": {
+      "Locations": [
+        {
+          "Id": "Anywhere",
+          "Characters": [
+            {
+              "Name": "Main_hero",
+              "IsObject": true
+            },
+            {
+              "Name": "Bandit"
+            }
+          ]
+        }
+      ]
+    },
+    "RSide": {},
+    "Instructions": [
+      {
+        "Op": "move",
+        "Nodes": "Bandit",
+        "To": "Main_hero/Characters"
+      }
+    ]
+  }
+]

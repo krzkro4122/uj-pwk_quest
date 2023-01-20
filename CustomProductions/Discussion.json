@@ -1,0 +1,51 @@
+[
+  {
+    "Title": "Discussion ending with an intent reveal / Dyskusja kończąca się odkryciem zamiarów",
+    "TitleGeneric": "Getting knowledge from conversation / Rozmowa z przekazaniem informacji",
+    "Description": "Bandit podczas rozmowy Main_hero przedstawia mu swoje prawdziwe zamiary.",
+    "Override": 1,
+    "LSide": {
+      "Locations": [
+        {
+          "Id": "Anywhere",
+          "Characters": [
+            {
+              "Name": "Bandit",
+              "IsObject": true,
+              "Items": [
+                {
+                    "Name": "Ship_ticket"
+                }
+              ],
+              "Narration": [
+                {
+                  "Name": "Intent",
+                  "Attributes": {
+                    "Knowledge": "Bandit's plans"
+                  }
+                }
+              ]
+            },
+            {
+              "Name": "Main_hero",
+              "Items": [
+                {
+                    "Name": "Priceless_argentinian_cactus"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "RSide": {},
+    "Preconditions": [],
+    "Instructions": [
+      {
+        "Op": "copy",
+        "To": "Main_hero/Narration",
+        "Nodes": "Intent"
+      }
+    ]
+  }
+]
