@@ -1,0 +1,64 @@
+    [
+        {
+        "Title": "",
+        "TitleGeneric": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
+        "Description": "Main_hero wymienia się z Bandit przedmiotem Priceless_argentinian_cactus w zamian za Ship_ticket.",
+        "Override": 0,
+        "LSide": {
+        "Locations": [
+            {
+            "Name": "Port",
+            "Attributes": {},
+            "Characters": [
+                {
+                "Name": "Main_hero",
+                "IsObject": true,
+                "Attributes": {},
+                "Items": [
+                    {
+                        "Name": "Priceless_argentinian_cactus",
+                        "Attributes": {
+                            "Value": null
+                        }
+                    }
+                ]
+                },
+                {
+                "Name": "Bandit",
+                "Attributes": {},
+                "Characters": [],
+                "Items": [
+                    {
+                    "Name": "Ship_ticket",
+                    "Attributes": {
+                        "Value": null
+                    }
+                    }
+                ]
+                }
+            ],
+            "Items": [],
+            "Connections": []
+            }
+        ]
+        },
+        "RSide": {},
+        "Preconditions": [ {
+
+        "Cond": "Priceless_argentinian_cactus.Value >= Ship_ticket.Value"
+
+        } ],
+        "Instructions": [
+        {
+            "Op": "move",
+            "Nodes": "Priceless_argentinian_cactus",
+            "To": "Bandit/Items"
+        },
+        {
+            "Op": "move",
+            "Nodes": "Ship_ticket",
+            "To": "Main_hero/Items"
+        }
+        ]
+    }
+    ]
