@@ -1,5 +1,5 @@
-    [
-        {
+[
+    {
         "Title": "Wymiana 1500 Money na Ship_ticket / Exchanging 1500 Money for Ship_ticket",
         "TitleGeneric": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
         "Description": "Main_hero wymienia się z Bandit 1500 Money w zamian za Ship_ticket.",
@@ -54,4 +54,4 @@
         }
         ]
     }
-    ]
+]
