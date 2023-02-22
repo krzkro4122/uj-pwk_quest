@@ -1,0 +1,41 @@
+
+[
+    {
+        "Title": "Main_hero hiring Bandit for Priceless_argentinian_cactus / Main_hero wynajmuje Bandyte za Priceless_argentinian_cactus",
+        "TitleGeneric": "Making a deal / Transakcja kupna-sprzedaży",
+        "Description": "Main_hero wynajmuje Bandit w zamian za Priceless_argentinian_cactus.",
+        "Override": 0,
+        "LSide": {
+        "Locations": [
+            {
+            "Id": "Somewhere",
+            "Attributes": {},
+            "Characters": [
+                {
+                "Name": "Main_hero",
+                "IsObject": true,
+                "Items": [
+                    {
+                        "Name": "Priceless_argentinian_cactus"
+                    }
+                ]
+                },
+                {
+                "Name": "Bandit"
+                }
+            ],
+            "Items": [],
+            "Connections": []
+            }
+        ]
+        },
+        "RSide": {},
+        "Instructions": [
+            {
+                "Op": "move",
+                "Nodes": "Priceless_argentinian_cactus",
+                "To": "Bandit/Items"
+            }
+        ]
+    }
+]
