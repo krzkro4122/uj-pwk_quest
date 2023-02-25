@@ -1,7 +1,7 @@
 [
   {
     "Title": "Main_hero grouping with Bandit / Main_hero grupuje się z Bandytą",
-    "TitleGeneric": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
+    "TitleGeneric": "Overwhelming character / Przejęcie kontroli nad postacią",
     "Description": "Stworzenie grupy z dwóch bohaterów: Main_hero przejmuje kontrolę nad inną postacią (Bandit).",
     "Override": 1,
     "LSide": {
@@ -21,6 +21,11 @@
       ]
     },
     "RSide": {},
+    "Preconditions": [
+      {
+        "Cond": "Bandit/Items/Priceless_argentinian_cactus == true"
+      }
+    ],
     "Instructions": [
       {
         "Op": "move",

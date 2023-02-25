@@ -1,57 +1,68 @@
 [
     {
-        "Title": "Wymiana 1500 Money na Ship_ticket / Exchanging 1500 Money for Ship_ticket",
-        "TitleGeneric": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
-        "Description": "Main_hero wymienia się z Bandit 1500 Money w zamian za Ship_ticket.",
-        "Override": 0,
+        "Title": "Making a deal while having knowledge / Transakcja kupna-sprzedaży przy posiadaniu wiedzy",
+        "TitleGeneric": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
+        "Description": "«Seller» sprzedaje kupującemu («Buyer») przedmiot («Something»).",
+        "Override": 1,
         "LSide": {
-        "Locations": [
+          "Locations": [
             {
-            "Name": "Forest",
-            "Attributes": {},
-            "Characters": [
+              "Id": "Somewhere",
+              "Attributes": {},
+              "Characters": [
                 {
-                "Name": "Main_hero",
-                "IsObject": true,
-                "Attributes": {
-                    "Money": 1500
-                }
-                },
-                {
-                "Name": "Bandit",
-                "Attributes": {
+                  "Id": "Buyer",
+                  "IsObject": true,
+                  "Attributes": {
                     "Money": null
+                  }
                 },
-                "Characters": [],
-                "Items": [
+                {
+                  "Id": "Seller",
+                  "Attributes": {
+                    "Money": null
+                  },
+                  "Characters": [],
+                  "Items": [
                     {
-                    "Name": "Ship_ticket"
+                      "Id": "Something",
+                      "Attributes": {
+                        "Value": null
+                      }
                     }
-                ]
+                  ]
                 }
-            ],
-            "Items": [],
-            "Connections": []
+              ],
+              "Items": [],
+              "Connections": []
             }
-        ]
+          ]
         },
         "RSide": {},
+        "Preconditions": [
+          {
+            "Cond": "Buyer.Money >= Something.Value"
+          },
+          {
+            "Cond": "Buyer/Narration/Intent == true"
+          }
+        ],
         "Instructions": [
-        {
-        "Op": "set",
-        "Attribute": "Main_hero.Money",
-        "Expr": "Main_hero.Money - 1500"
-        },
-        {
-        "Op": "set",
-        "Attribute": "Bandit.Money",
-        "Expr": "1500"
-        },
-        {
+          {
             "Op": "move",
-            "Nodes": "Ship_ticket",
-            "To": "Main_hero/Items"
-        }
+            "Nodes": "Something",
+            "To": "Buyer/Items"
+          },
+          {
+            "Op": "set",
+            "Attribute": "Buyer.Money",
+            "Expr": "Buyer.Money - Something.Value"
+          },
+          {
+            "Op": "set",
+            "Attribute": "Seller.Money",
+            "Expr": "Seller.Money + Something.Value"
+          }
         ]
-    }
+      }
 ]

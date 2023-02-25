@@ -21,7 +21,7 @@
                 {
                   "Name": "Intent",
                   "Attributes": {
-                    "Knowledge": "Bandit's plans"
+                    "Knowledge": "The bandit is trying to get to the city and board the ship with his Ship_ticket!"
                   }
                 }
               ]
@@ -29,9 +29,6 @@
             {
               "Name": "Main_hero",
               "Items": [
-                {
-                    "Name": "Priceless_argentinian_cactus"
-                }
               ]
             }
           ]
@@ -39,7 +36,11 @@
       ]
     },
     "RSide": {},
-    "Preconditions": [],
+    "Preconditions": [
+      {
+        "Cond": "Main_hero/Characters/Bandit == true"
+      }
+  ],
     "Instructions": [
       {
         "Op": "copy",

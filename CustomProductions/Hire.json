@@ -4,7 +4,7 @@
         "Title": "Hiring bandit for cactus / Wynajęcie zbójcy w zamian za kaktus",
         "TitleGeneric": "Making a deal / Transakcja kupna-sprzedaży",
         "Description": "Main_hero wynajmuje Bandit w zamian za Priceless_argentinian_cactus.",
-        "Override": 0,
+        "Override": 1,
         "LSide": {
         "Locations": [
             {
@@ -33,7 +33,7 @@
         "Instructions": [
             {
                 "Op": "move",
-                "Nodes": "Priceless_argentinian_cactus",
+                "Nodes": "Main_hero/Items/Priceless_argentinian_cactus",
                 "To": "Bandit/Items"
             }
         ]
