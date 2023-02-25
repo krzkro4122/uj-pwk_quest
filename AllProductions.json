@@ -201,30 +201,6 @@
         }
       ]
     },
-      "RSide": {},
-      "Preconditions": [
-        {
-          "Cond": "Buyer.Money >= Something.Value"
-        }
-      ],
-      "Instructions": [
-        {
-          "Op": "move",
-          "Nodes": "Something",
-          "To": "Buyer/Items"
-        },
-        {
-          "Op": "set",
-          "Attribute": "Buyer.Money",
-          "Expr": "Buyer.Money - Something.Value"
-        },
-        {
-          "Op": "set",
-          "Attribute": "Seller.Money",
-          "Expr": "Seller.Money + Something.Value"
-        }
-      ]
-    },
     {
       "Title": "Main_hero grouping with Bandit / Main_hero grupuje się z Bandytą",
       "TitleGeneric": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
