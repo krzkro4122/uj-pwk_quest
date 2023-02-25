@@ -1,6 +1,6 @@
 [
   {
-    "Title": "World PWK 2022 / Świat PWK 2022",
+    "Title": "World PWK 2022_12 / Świat PWK 2022_12",
     "TitleGeneric": "",
     "Description": "Produkcja składająca się wyłącznie z lewej strony.",
     "Override": 0,
@@ -785,10 +785,7 @@
           ],
           "Items": [
             {
-              "Name": "Advertising_column",
-              "Attributes": {
-                "Value": 5
-              }
+              "Name": "Advertising_column"
             }
           ],
           "Connections": [
@@ -896,10 +893,7 @@
           ],
           "Items": [
             {
-              "Name": "Well",
-              "Attributes": {
-                "Value": 250
-              }
+              "Name": "Well"
             },
             {
               "Name": "Stone",
@@ -908,10 +902,7 @@
               }
             },
             {
-              "Name": "Advertising_column",
-              "Attributes": {
-                "Value": 5
-              }
+              "Name": "Advertising_column"
             }
           ],
           "Connections": [
@@ -992,7 +983,8 @@
             {
               "Name": "Guard",
               "Attributes": {
-                "HP": 20
+                "HP": 20,
+                "IsAuthority": true
               },
               "Items": [
                 {
