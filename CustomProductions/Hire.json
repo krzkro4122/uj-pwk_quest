@@ -33,7 +33,7 @@
         "Instructions": [
             {
                 "Op": "move",
-                "Nodes": "Priceless_argentinian_cactus",
+                "Nodes": "Main_hero/Items/Priceless_argentinian_cactus",
                 "To": "Bandit/Items"
             }
         ]
