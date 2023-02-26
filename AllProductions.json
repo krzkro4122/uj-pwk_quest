@@ -1,7 +1,7 @@
 [
- 
+
   {
-    "Title": "Deleting the group in Port resulting in true Intent / Rozgrupowanie bohaterów w Porcie pokazujące prawdziwe intencje",
+    "Title": "Deleting the group in Port resulting in true intent / Rozgrupowanie bohaterów w Porcie pokazujące prawdziwe intencje",
     "TitleGeneric": "Deleting the group / Rozgrupowanie bohaterów",
     "Description": "Rozwiązywanie grupy bohaterów podległych postaci Main_hero w lokacji Port.",
     "Override": 1,
@@ -30,7 +30,6 @@
                       }
                     ]
                   }
-
               ]
             }
           ]
@@ -187,6 +186,11 @@
       ]
     },
     "RSide": {},
+    "Preconditions":[
+      {
+          "Cond": "Bandit/Items/Priceless_argentinian_cactus == true"
+      }
+    ],
     "Instructions": [
       {
         "Op": "move",
@@ -195,33 +199,42 @@
       }
     ]
   },
-
   {
     "Title": "Hiring bandit for cactus / Wynajęcie zbójcy w zamian za kaktus",
     "TitleGeneric": "Making a deal / Transakcja kupna-sprzedaży",
     "Description": "Main_hero wynajmuje Bandit w zamian za Priceless_argentinian_cactus.",
     "Override": 1,
     "LSide": {
-      "Locations": [
+    "Locations": [
         {
-          "Id": "Somewhere",
-          "Attributes": {},
-          "Characters": [
+        "Id": "Somewhere",
+        "Attributes": {},
+        "Characters": [
             {
-              "Name": "Main_hero",
-              "IsObject": true,
-              "Items": []
+            "Name": "Main_hero",
+            "IsObject": true,
+            "Items": [
+              {
+                  "Name": "Priceless_argentinian_cactus"
+              }
+            ]
             },
             {
-              "Name": "Bandit"
+            "Name": "Bandit"
             }
-          ],
-          "Items": [],
-          "Connections": []
+        ],
+        "Items": [],
+        "Connections": []
         }
-      ]
+    ]
     },
     "RSide": {},
-    "Instructions": []
+    "Instructions": [
+        {
+            "Op": "move",
+            "Nodes": "Main_hero/Items/Priceless_argentinian_cactus",
+            "To": "Bandit/Items"
+        }
+    ]
   }
 ]
