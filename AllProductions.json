@@ -1,5 +1,4 @@
 [
-
   {
     "Title": "Deleting the group in Port resulting in true intent / Rozgrupowanie bohaterów w Porcie pokazujące prawdziwe intencje",
     "TitleGeneric": "Deleting the group / Rozgrupowanie bohaterów",
@@ -47,6 +46,11 @@
         "Op": "copy",
         "To": "Main_hero/Narration",
         "Nodes": "Intent"
+      },
+      {
+        "Op": "set",
+        "Attribute": "Main_hero.Money",
+        "Expr": "Main_hero.Money + 300"
       }
     ]
   },
@@ -101,32 +105,48 @@
   {
     "Title": "Making a deal while having knowledge / Transakcja kupna-sprzedaży przy posiadaniu wiedzy",
     "TitleGeneric": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
-    "Description": "«Seller» sprzedaje kupującemu («Buyer») przedmiot («Something»).",
+    "Description": "Bandit sprzedaje kupującemu (Main_hero) przedmiot (Ship_ticket).",
     "Override": 1,
     "LSide": {
       "Locations": [
         {
-          "Id": "Somewhere",
+          "Name": "Port",
           "Attributes": {},
           "Characters": [
             {
-              "Id": "Buyer",
+              "Name": "Main_hero",
               "IsObject": true,
               "Attributes": {
                 "Money": null
-              }
+              },
+              "Narration":[
+                {
+                  "Name": "Intent",
+                  "Attributes": {
+                    "Knowledge": "The bandit is trying to get to the city and board the ship with his Ship_ticket!"
+                  }
+                }
+              ]
             },
             {
-              "Id": "Seller",
+              "Name": "Bandit",
               "Attributes": {
                 "Money": null
               },
+              "Narration": [
+                {
+                  "Name": "Intent",
+                  "Attributes": {
+                    "Knowledge": "The bandit is trying to get to the city and board the ship with his Ship_ticket!"
+                  }
+                }
+              ],
               "Characters": [],
               "Items": [
                 {
-                  "Id": "Something",
+                  "Name": "Ship_ticket",
                   "Attributes": {
-                    "Value": null
+                    "Value": 1500
                   }
                 }
               ]
@@ -140,27 +160,27 @@
     "RSide": {},
     "Preconditions": [
       {
-        "Cond": "Buyer.Money >= Something.Value"
+        "Cond": "Main_hero.Money >= Ship_ticket.Value"
       },
       {
-        "Cond": "Buyer/Narration/Intent == true"
+        "Cond": "Main_hero/Narration/Intent == true"
       }
     ],
     "Instructions": [
       {
         "Op": "move",
-        "Nodes": "Something",
-        "To": "Buyer/Items"
+        "Nodes": "Ship_ticket",
+        "To": "Main_hero/Items"
       },
       {
         "Op": "set",
-        "Attribute": "Buyer.Money",
-        "Expr": "Buyer.Money - Something.Value"
+        "Attribute": "Main_hero.Money",
+        "Expr": "Main_hero.Money - Ship_ticket.Value"
       },
       {
         "Op": "set",
-        "Attribute": "Seller.Money",
-        "Expr": "Seller.Money + Something.Value"
+        "Attribute": "Bandit.Money",
+        "Expr": "Bandit.Money + Ship_ticket.Value"
       }
     ]
   },
@@ -230,11 +250,21 @@
     },
     "RSide": {},
     "Instructions": [
-        {
-            "Op": "move",
-            "Nodes": "Main_hero/Items/Priceless_argentinian_cactus",
-            "To": "Bandit/Items"
+      {
+        "Op": "move",
+        "Nodes": "Main_hero/Items/Priceless_argentinian_cactus",
+        "To": "Bandit/Items"
+      },
+      {
+        "Op": "create",
+        "In": "Main_hero/Narration",
+        "Sheaf": {
+          "Name": "Escort_quest",
+          "Attributes": {
+            "Knowledge": "The bandit needs to get to the port. You will be rewarded accordingly."
+          }
         }
+      }
     ]
   }
 ]
