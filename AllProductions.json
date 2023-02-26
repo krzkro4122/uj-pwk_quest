@@ -187,6 +187,11 @@
       ]
     },
     "RSide": {},
+    "Preconditions":[
+      {
+          "Cond": "Bandit/Items/Priceless_argentinian_cactus == true"
+      }
+    ],
     "Instructions": [
       {
         "Op": "move",
@@ -222,6 +227,22 @@
       ]
     },
     "RSide": {},
-    "Instructions": []
+    "Instructions": [{
+      "Op": "create",
+      "In": "Bandit/Items",
+      "Sheaf": {
+        "Name": "Priceless_argentinian_cactus"
+      }
+    },
+    {
+      "Op": "create",
+      "In":"Bandit/Narration",
+      "Sheaf": {
+          "Name": "Intent",
+          "Attributes": {
+            "Knowledge": "The bandit is trying to get to the city and board the ship with his Ship_ticket!"
+        }
+      }
+    }]
   }
 ]
